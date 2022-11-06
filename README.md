@@ -10,3 +10,8 @@
 # License
 
 Apache 2.0
+
+# Binary License
+
+Check the license file inside the binary.
+
