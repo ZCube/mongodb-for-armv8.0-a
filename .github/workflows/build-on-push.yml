@@ -43,5 +43,5 @@ jobs:
         run: |
           export repository=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')
           cd docker
-          docker buildx build --build-args=VERSION=${{ matrix.VERSION }} -f Dockerfile -t ${{ env.REGISTRY }}/${repository}/mongodb:${{ matrix.VERSION }} --push --platforms=linux/amd64,linux/arm64
-          docker buildx build --build-args=VERSION=${{ matrix.VERSION }} -f Dockerfile.bitnami-compat -t ${{ env.REGISTRY }}/${repository}/bitnami-compat-mongodb:${{ matrix.VERSION }} --push --platforms=linux/amd64,linux/arm64
+          docker buildx build --build-arg VERSION=${{ matrix.VERSION }} -f Dockerfile -t ${{ env.REGISTRY }}/${repository}/mongodb:${{ matrix.VERSION }} --push --platforms=linux/amd64,linux/arm64
+          docker buildx build --build-arg VERSION=${{ matrix.VERSION }} -f Dockerfile.bitnami-compat -t ${{ env.REGISTRY }}/${repository}/bitnami-compat-mongodb:${{ matrix.VERSION }} --push --platforms=linux/amd64,linux/arm64
